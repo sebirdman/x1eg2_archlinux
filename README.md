@@ -1,19 +1,30 @@
 ### X1E Gen2
 
+The goal of part of this project are two things:
+* Get documentation into the arch wiki on this laptop
+* Record my own personal install i can avoid re-installing all the time like what normally happens after i forget how i configured something.
+
 ## Working
 
-*Wifi
-*Trackpad
-*Audio
-*Webcam
-*Bluetooth
-*SDCard
-*USB-C
+* Wifi
+* Trackpad
+* Audio
+* Webcam
+* Bluetooth
+* SDCard
+* USB-C
 
 ## Unknown
 
-*Thunderbolt
-*Headphone jack
+* Thunderbolt
+* Headphone jack
+* Windows Hello (with Howdy)
+
+## Not working
+
+* Fingerprint
+* Plug-n-Play External Output (must do fnagling)
+* Battery Status is weird
 
 ### Hybrid Graphics
 
@@ -32,6 +43,8 @@ but, add optirun before the intel command specified there
 *NOTE* the open source nvidia drivers will, cause kernel panics
 
 *NOTE*: you will need to enable the display still after starting that. if using xfce: open display manager.
+
+*NOTE*: i'm currently using the optimus-manager solution with bbswitch
 
 ### Better Graphics Setup
 
@@ -57,6 +70,10 @@ Not working, but synaptics has said they're working on it.
 1) https://gitlab.freedesktop.org/vincenth/libfprint/tree/synaptics-driver-20190617
 1) https://github.com/nmikhailov/Validity90/issues/72
 
+
+### Battery
+
+The battery information reads out wrong very often. Still need to resolve.
 
 ### Undervolting
 
@@ -104,3 +121,31 @@ Threads fairness:
     events (avg/stddev):           323202.7500/400.54
     execution time (avg/stddev):   299.9452/0.00
 
+# Personal
+
+## Files Created
+
+/etc/localtime
+/etc/hostname
+/etc/hosts
+
+## Files modified
+
+/etc/locale.gen  uncommented en_US.UTF-8 UTF-8
+visudo enable wheel group
+/usr/share/optimus-manger.conf (change to bbswitch)
+
+## Filesystem 
+
+Disk /dev/nvme0n1: 238.49 GiB, 256060514304 bytes, 500118192 sectors
+Disk model: INTEL SSDPEKKF256G8L                    
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 1E61312A-E050-B444-8859-F83D7191850F
+
+Device             Start       End   Sectors  Size Type
+/dev/nvme0n1p1      2048   1050623   1048576  512M EFI System
+/dev/nvme0n1p2   1050624 135268351 134217728   64G Linux swap
+/dev/nvme0n1p3 135268352 500118158 364849807  174G Linux root (x86-64)
