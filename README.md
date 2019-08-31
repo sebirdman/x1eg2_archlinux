@@ -33,6 +33,7 @@ The goal of part of this project are two things:
 * visudo enable wheel group
 * /etc/intel_undervolt.conf (-160)
 * /etc/optimus-manager/optimus-manager.conf (change to no switching)
+* /etc/mkinitcpio.conf (add battery to modules)
 
 ## Filesystem 
 
